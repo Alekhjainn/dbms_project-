@@ -1,0 +1,36 @@
+<h1>Library Reports</h1>
+
+<h3>1. Available Titles</h3>
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>ISBN</th>
+            <th>Edition</th>
+            <th>Available Copies</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ available_titles }}
+    </tbody>
+</table>
+
+<h3>2. Overdue Copies</h3>
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Accession No</th>
+            <th>Title</th>
+            <th>Member</th>
+            <th>Days Overdue</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ overdue_copies }}
+    </tbody>
+</table>
+
+<div class="sql-panel">
+    <h3>SQL executed for these reports:</h3>
+    <pre>{{ sql_text }}</pre>
+</div>

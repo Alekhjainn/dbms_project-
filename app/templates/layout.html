@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library DBMS</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Library</h2>
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/search">Search Catalogue</a></li>
+            <li><a href="/issue">Issue Book</a></li>
+            <li><a href="/return">Return Book</a></li>
+            <li><a href="/fines">Fines</a></li>
+            <li><a href="/reports">Reports</a></li>
+            {{ admin_panel_link }}
+        </ul>
+        <div class="user-info">
+            <p>{{ username }} ({{ role }})</p>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <div class="main-content">
+
+        <script>
+            let flash = "{{ flash }}";
+            if (flash) {
+                document.write('<div class="flash">' + decodeURIComponent(flash.replace(/\+/g, ' ')) + '</div>');
+            }
+        </script>
+        {{ content }}
+    </div>
+</body>
+</html>

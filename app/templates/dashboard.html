@@ -1,0 +1,23 @@
+<h1>Dashboard</h1>
+<div class="dashboard-cards">
+    <a href="/list?type=copies" class="card" style="text-decoration:none">
+        <h3>Total Copies</h3>
+        <p class="stat">{{ total_books }}</p>
+    </a>
+    <a href="/list?type=issued" class="card" style="text-decoration:none">
+        <h3>Issued Books</h3>
+        <p class="stat">{{ issued }}</p>
+    </a>
+    <a href="/list?type=overdue" class="card" style="text-decoration:none">
+        <h3>Overdue Books</h3>
+        <p class="stat">{{ overdue }}</p>
+    </a>
+    <a href="/list?type=reservations" class="card" style="text-decoration:none">
+        <h3>Waiting Reservations</h3>
+        <p class="stat">{{ reservations }}</p>
+    </a>
+    <a href="/fines" class="card" style="text-decoration:none">
+        <h3>Unpaid Fines</h3>
+        <p class="stat">₹{{ fines_due }}</p>
+    </a>
+</div>

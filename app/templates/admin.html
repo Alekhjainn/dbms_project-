@@ -1,0 +1,49 @@
+<h1>Admin Panel</h1>
+
+<div class="dashboard-cards" style="margin-bottom: 2rem;">
+    <div class="form-standard">
+        <h3 style="margin-top:0;">Delete Member</h3>
+        <form method="POST" action="/admin/delete_member">
+            <div class="form-group">
+                <label>Member ID</label>
+                <input type="number" name="member_id" required>
+            </div>
+            <button type="submit" style="background: linear-gradient(135deg, var(--danger) 0%, #b91c1c 100%);">Delete Member</button>
+        </form>
+    </div>
+
+    <div class="form-standard">
+        <h3 style="margin-top:0;">Update Loan Policy</h3>
+        <form method="POST" action="/admin/update_policy">
+            <div class="form-group">
+                <label>Member Type</label>
+                <select name="member_type" style="width:100%; padding:0.75rem 1rem; border-radius:8px; background:var(--bg-primary); color:white; border:1px solid var(--border-color); margin-bottom:1rem;">
+                    <option value="Student">Student</option>
+                    <option value="Faculty">Faculty</option>
+                    <option value="Staff">Staff</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Max Books</label>
+                <input type="number" name="max_books" required>
+            </div>
+            <div class="form-group">
+                <label>Loan Days</label>
+                <input type="number" name="loan_days" required>
+            </div>
+            <div class="form-group">
+                <label>Fine Per Day (₹)</label>
+                <input type="number" step="0.5" name="fine_per_day" required>
+            </div>
+            <button type="submit">Update Policy</button>
+        </form>
+    </div>
+</div>
+
+<div class="form-standard" style="border-color: var(--danger);">
+    <h3 style="color: var(--danger); margin-top:0;">Danger Zone</h3>
+    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Resetting the database will wipe all current records and re-seed the initial sample data. You will be logged out.</p>
+    <form method="POST" action="/admin/reset_db">
+        <button type="submit" style="background: linear-gradient(135deg, var(--danger) 0%, #b91c1c 100%);">Factory Reset Database</button>
+    </form>
+</div>

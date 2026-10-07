@@ -1,0 +1,23 @@
+<h1>Search Catalogue</h1>
+<form method="GET" action="/search" class="search-form">
+    <input type="text" name="q" value="{{ term }}" placeholder="Search by title, author, category, ISBN..." required>
+    <button type="submit">Search</button>
+</form>
+
+{{#if results}}
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>ISBN</th>
+            <th>Accession No</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ results }}
+    </tbody>
+</table>
+{{/if}}
